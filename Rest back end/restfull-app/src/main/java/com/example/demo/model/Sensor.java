@@ -1,21 +1,24 @@
 package com.example.demo.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Sensor {
 	
-	@id
+	@Id
 	private String id;
+	private String SensorName;
 	private String floorNo;
 	private String roomNo;
 	private int CO2=0;
 	private int smoke=0;
 	
-public Sensor(String floorNo,String roomNo ) {
+public Sensor(String SensorName,String floorNo,String roomNo ) {
 	
 	this.floorNo=floorNo;
 	this.roomNo=roomNo;
+	this.SensorName=SensorName;
 	
 }
 
@@ -63,6 +66,16 @@ public Sensor(String floorNo,String roomNo ) {
 
 	public void setRoomNo(String roomNo) {
 		this.roomNo = roomNo;
+	}
+
+
+	public String getSensorName() {
+		return SensorName;
+	}
+
+
+	public void setSensorName(String sensorName) {
+		SensorName = sensorName;
 	}
 	
 	

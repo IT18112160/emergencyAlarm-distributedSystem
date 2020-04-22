@@ -12,7 +12,7 @@ import com.example.demo.Service.SensorService;
 import com.example.demo.model.Sensor;
 
 @RestController
-@CrossOrigin("http://localhost:3000/")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class SensorController {
 	
 	@Autowired

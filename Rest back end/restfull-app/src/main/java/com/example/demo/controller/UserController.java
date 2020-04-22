@@ -2,14 +2,18 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Service.UserService;
+import com.example.demo.model.User;
 
 @RestController
-@CrossOrigin("http://localhost:3000/")
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
 	
 	@Autowired
@@ -21,10 +25,10 @@ public class UserController {
 		return service.RegisterUser(username, password, type);
 	}
 	
-	@RequestMapping("/login")
-	public String Login(@RequestParam String username, @RequestParam String password) {
+	@PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
+	public User Login(@RequestBody User user) {
 		
-		return service.Login(username, password);
+		return service.Login(user.getUsername(), user.getPassword());
 	}
 	
 

@@ -1,26 +1,38 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {useDispatch, useSelector} from "react-redux";
+import signin from "./Actions/signin";
+import Login from "./Components/Login";
+import Panel from "./Components/Panel";
+import signout from "./Actions/signout";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const log= useSelector(state=>state.logged)
+  const dispatch= useDispatch();
+
+  const login=()=>{
+    dispatch(signin())
+  }
+
+  const logout=()=>{
+    dispatch(signout)
+  }
+
+
+if(log===false){
+
+  return <div>
+    <button onClick={()=>dispatch(signin())}>Sign in</button>
+    <Login login={login} />
+  </div>
+}
+if(log===true){
+  return <div>
+    <Panel logout={logout}/>
+  </div>
+}
 }
 
 export default App;

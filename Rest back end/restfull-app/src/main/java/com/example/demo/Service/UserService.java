@@ -24,7 +24,7 @@ public class UserService {
 		}
 	}
 	
-	public String Login(String username,String password) {
+	public User Login(String username,String password) {
 		
 		try {
 			User user = repo.findByUsername(username);
@@ -32,14 +32,14 @@ public class UserService {
 			if(user!=null) {
 				
 				if(user.getPassword().equals(password)) {
-					return "success";
-				}else { return "error";}
+					return user;
+				}else { return null;}
 			}else {
-				return "error";
+				return null;
 			}
 		}catch(Exception e) {
 			
-			return "error";
+			return null;
 		}
 		
 	}

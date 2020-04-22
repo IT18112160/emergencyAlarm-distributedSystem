@@ -1,0 +1,16 @@
+2020-04-22 10:46:59,607 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-04-22 11:35:54,902 [Worker-4: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:restfull-app:0.0.1-SNAPSHOT @ C:\Users\exploit\Desktop\lakshan\Assignments\DS\Emergency alarm system\Rest back end\restfull-app\pom.xml.
+2020-04-22 11:36:11,069 [Worker-4: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /restfull-app/src/main/java
+2020-04-22 11:36:11,069 [Worker-4: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /restfull-app/src/main/resources
+2020-04-22 11:36:11,087 [Worker-4: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /restfull-app/src/main/resources
+2020-04-22 11:36:11,106 [Worker-4: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /restfull-app/src/test/java
+2020-04-22 11:36:18,683 [Worker-4: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 46 sec
+2020-04-22 11:36:18,686 [Worker-4: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-04-22 11:36:21,228 [Worker-4: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:restfull-app:0.0.1-SNAPSHOT @ C:\Users\exploit\Desktop\lakshan\Assignments\DS\Emergency alarm system\Rest back end\restfull-app\pom.xml.
+2020-04-22 11:36:23,790 [Worker-4: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /restfull-app/src/main/java
+2020-04-22 11:36:23,791 [Worker-4: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /restfull-app/src/main/resources
+2020-04-22 11:36:23,791 [Worker-4: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /restfull-app/src/main/resources
+2020-04-22 11:36:23,793 [Worker-4: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /restfull-app/src/test/java
+2020-04-22 11:36:24,683 [Worker-4: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 5 sec
+2020-04-22 11:36:27,120 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-22 11:36:27,126 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource

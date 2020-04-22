@@ -33,3 +33,60 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:37:37.590
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:37:37.606
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@6c427386[org.springframework.tooling.boot.ls:1.15.0.202001210741(id=631)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:37:37.691
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:37:40.197
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:47.450
+!MESSAGE Boot LS startup time from start to initialized: 189307ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.075
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ieddBbBCisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.211
+!MESSAGE subscribing to classpath changes: sts4.classpath.ieddBbBC isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.241
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.255
+!MESSAGE subsribers = {sts4.classpath.ieddBbBC=Send Classpath Notifications(119)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.309
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.318
+!MESSAGE project restfull-app ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.329
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.339
+!MESSAGE Preparing classpath changed notification restfull-app
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.348
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ieddBbBC => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.357
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.439
+!MESSAGE classpath=88 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.459
+!MESSAGE buffering callback sts4.classpath.ieddBbBC restfull-app false 88
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.472
+!MESSAGE executing callback sts4.classpath.ieddBbBC 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-22 11:40:48.837
+!MESSAGE executing callback sts4.classpath.ieddBbBC SUCCESS [done]

@@ -32,5 +32,44 @@ public class SensorService {
 		
 		return repo.findAll();
 	}
+	
+	public void updateSensorCO2(String id,int CO2) {
+		
+		try {
+			
+			Sensor sensor= repo.findByid(id);
+			
+		      sensor.setCO2(CO2);
+		      
+		      repo.save(sensor);
+			
+			
+			
+		}catch(Exception e)
+		{
+			
+			
+		}
+	}
+	
+	
+	public void updateSmoke(String id,int smoke) {
+		
+		try {
+			
+			Sensor sensor= repo.findByid(id);
+			
+		      sensor.setSmoke(smoke);
+		      
+		      repo.save(sensor);
+			
+			
+			
+		}catch(Exception e)
+		{
+			
+			
+		}
+	}
 
 }

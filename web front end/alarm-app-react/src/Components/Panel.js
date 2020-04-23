@@ -3,6 +3,26 @@ import {AppBar, Toolbar, Typography,LinearProgress,Button} from "@material-ui/co
 import './Panel.css'
 
 class Panel extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state={
+            sensors: []
+        }
+    }
+
+
+componentWillMount() {
+
+        console.log('Will mount fuck')
+
+        fetch('http://localhost:8080/getallsensors',{mode:"cors"}).then(res=>{ return res.json()}).then(data=>{console.log(data)
+        this.setState({sensors:data})})
+
+}
+
+
     render() {
         return (
             <div>
@@ -14,8 +34,7 @@ class Panel extends Component {
                             Emergency Fire Alarm System
                         </Typography>
 
-                        <Button variant={"contained"} color={"secondary"} style={{marginLeft:'35%'}} onClick={()=>{this.props.logout
-                        ()}}>log Out</Button>
+                        <Button variant={"contained"} color={"secondary"} style={{marginLeft:'35%'}} onClick={()=>this.props.logout()}>log Out</Button>
 
                     </Toolbar>
                 </AppBar>
@@ -23,19 +42,25 @@ class Panel extends Component {
 
                 <div className='container' >
 
+                    {
+                        this.state.sensors.map(sensor=>{
 
-                    <div className="sensor">
+                        return (<div className="sensor">
 
-                        <h4>Sensor Name</h4>
-                        <h6>CO2 Volume</h6>
-                        <LinearProgress variant="buffer" value={50} valueBuffer={100} />
+                                <h4>SensorName:{sensor.sensorName}  location:{"Floor:"+sensor.floorNo +"  "+ "Room:"+sensor.roomNo}</h4>
+                                <h6>CO2 Volume:{sensor.co2}</h6>
+                                <LinearProgress variant="buffer" value={sensor.co2*10} valueBuffer={100} color={sensor.co2>5? 'secondary': 'primary'}/>
 
-                        <h6>Smoke volume</h6>
-                        <LinearProgress variant="buffer" value={70} valueBuffer={100} />
+                                <h6>Smoke volume:{sensor.smoke}</h6>
+                                <LinearProgress variant="buffer" value={sensor.smoke*10} valueBuffer={100} color={sensor.smoke>5? 'secondary': 'primary'}/>
 
-                    </div>
+                            </div>)
 
 
+
+                    })
+
+                    }
 
 
 

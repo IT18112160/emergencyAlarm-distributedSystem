@@ -1,8 +1,12 @@
 .container{
 
     width: 800px;
-    background: lightgrey;
     margin-top: 5%;
     margin-left: 20%;
     height: 180px;
+}
+.sensor{
+
+    margin-bottom: 10px;
+    background: lightcyan;
 }

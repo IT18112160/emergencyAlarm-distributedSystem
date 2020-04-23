@@ -6,6 +6,7 @@ import com.example.demo.model.Sensor;
 
 public interface SensorRepo extends MongoRepository<Sensor, String> {
 	
-	public Sensor findBySensorName(String SensorName);
+	public Sensor findByid(String id);
+	
 
 }

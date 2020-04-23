@@ -43,6 +43,7 @@ class Login extends Component {
 
 
         fetch('http://localhost:8080/login',{
+            mode:'no-cors',
             method:'POST',
             headers:{
                 'content-type': 'application/json',
@@ -52,10 +53,12 @@ class Login extends Component {
 
 
         }).then(res=>{
-            console.log(res)
+            return res.json();
 
         }).then(data=>{
+            console.log(data)
         })
+
 
 
 
@@ -93,7 +96,7 @@ class Login extends Component {
                     <TextField name='password' id="outlined-basic" label="Password" variant="outlined" className="textfield" type='password' onChange={this.handlechange}/>
                     </div>
 
-                    <Button style={{marginTop:'20px',width:'300px'}} variant="contained" color="primary" onClick={()=>{this.props.login()}}>
+                    <Button style={{marginTop:'20px',width:'300px'}} variant="contained" color="primary" onClick={this.login}>
                         Login
                     </Button>
                 </div>

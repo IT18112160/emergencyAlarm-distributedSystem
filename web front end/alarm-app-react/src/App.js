@@ -16,9 +16,7 @@ function App() {
     dispatch(signin())
   }
 
-  const logout=()=>{
-    dispatch(signout)
-  }
+
 
 
 if(log===false){
@@ -30,7 +28,7 @@ if(log===false){
 }
 if(log===true){
   return <div>
-    <Panel logout={logout}/>
+    <Panel logout={login}/>
   </div>
 }
 }

@@ -12,7 +12,7 @@ import com.example.demo.Service.SensorService;
 import com.example.demo.model.Sensor;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000/")
+@CrossOrigin(origins = "http://localhost:3000")
 public class SensorController {
 	
 	@Autowired
@@ -30,6 +30,19 @@ public class SensorController {
 	public List<Sensor> getAllSensors(){
 		
 		return service.getAllSensors();
+	}
+	
+	
+	@RequestMapping("/updateco2")
+	public void UpdateCO2(@RequestParam String id,@RequestParam int CO2) {
+		
+	      service.updateSensorCO2(id,CO2);
+	}
+	
+	@RequestMapping("/updatesmoke")
+	public void UpdateSmoke(@RequestParam String id,@RequestParam int smoke) {
+		
+	      service.updateSmoke(id,smoke);
 	}
 	
 	

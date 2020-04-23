@@ -22,7 +22,7 @@ function App() {
 if(log===false){
 
   return <div>
-    <button onClick={()=>dispatch(signin())}>Sign in</button>
+
     <Login login={login} />
   </div>
 }

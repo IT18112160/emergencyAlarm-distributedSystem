@@ -1,6 +1,9 @@
 package com.example.demo.controller;
 
+import javax.swing.text.html.FormSubmitEvent.MethodType;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Service.UserService;
+import com.example.demo.data.UserRequest;
 import com.example.demo.model.User;
 
 @RestController
@@ -25,10 +29,14 @@ public class UserController {
 		return service.RegisterUser(username, password, type);
 	}
 	
-	@PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
-	public User Login(@RequestBody User user) {
+	@RequestMapping(method = RequestMethod.POST, path = "/login")
+	public User Login(@RequestBody UserRequest request) {
 		
-		return service.Login(user.getUsername(), user.getPassword());
+		System.out.println(request.username+"   "+request.password);
+		
+		return service.Login(request.username,request.password);
+		
+		
 	}
 	
 

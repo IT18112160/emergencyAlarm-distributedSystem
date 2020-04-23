@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {AppBar,Typography,Toolbar,Avatar,TextField,Button} from "@material-ui/core";
 import './Login.css'
 import {useSelector} from "react-redux";
+import axios from  'axios'
+
 
 class Login extends Component {
 
@@ -25,41 +27,30 @@ class Login extends Component {
             [e.target.name]: e.target.value
         })
 
-        console.log(this.state)
+
 
     }
 
 
 
 
-    login=(e)=>{
+    login=(e)=> {
+
+            e.preventDefault();
+
+            axios.post('http://localhost:8080/login',{
+                username:this.state.username,
+                password:this.state.password
+            }).then(response=>{
+               if(response.data.hasOwnProperty("username")){
+
+                   this.props.login();
+               }
 
 
-        const user= {
-            username: this.state.username,
-            password: this.state.password,
-            type:'user'
-        }
 
 
-        fetch('http://localhost:8080/login',{
-            mode:'no-cors',
-            method:'POST',
-            headers:{
-                'content-type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body:JSON.stringify(user)
-
-
-        }).then(res=>{
-            return res.json();
-
-        }).then(data=>{
-            console.log(data)
-        })
-
-
+            })
 
 
 

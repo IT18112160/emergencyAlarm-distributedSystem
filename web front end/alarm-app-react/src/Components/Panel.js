@@ -15,10 +15,17 @@ class Panel extends Component {
 
 componentWillMount() {
 
-        console.log('Will mount fuck')
 
-        fetch('http://localhost:8080/getallsensors',{mode:"cors"}).then(res=>{ return res.json()}).then(data=>{console.log(data)
-        this.setState({sensors:data})})
+setInterval(()=> {
+
+    fetch('http://localhost:8080/getallsensors', {mode: "cors"}).then(res => {
+        return res.json()
+    }).then(data => {
+        console.log(data)
+        this.setState({sensors: data})
+    })
+
+},1000);
 
 }
 
@@ -45,7 +52,7 @@ componentWillMount() {
                     {
                         this.state.sensors.map(sensor=>{
 
-                        return (<div className="sensor">
+                        return (<div className="sensor" key={sensor.id}>
 
                                 <h4>SensorName:{sensor.sensorName}  location:{"Floor:"+sensor.floorNo +"  "+ "Room:"+sensor.roomNo}</h4>
                                 <h6>CO2 Volume:{sensor.co2}</h6>

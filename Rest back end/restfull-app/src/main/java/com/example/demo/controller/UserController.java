@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Service.UserService;
 import com.example.demo.data.UserRequest;
+import com.example.demo.data.RgisterUserRequest;
 import com.example.demo.model.User;
 
 @RestController
@@ -23,10 +24,10 @@ public class UserController {
 	@Autowired
 	UserService service;
 	
-	@RequestMapping("/regiser")
-	public String registerUser(@RequestParam String username,@RequestParam String password, @RequestParam String type) {
+	@RequestMapping(path = "/regiser",method = RequestMethod.POST)
+	public String registerUser(@RequestBody RgisterUserRequest request) {
 		
-		return service.RegisterUser(username, password, type);
+		return service.RegisterUser(request.username, request.password, request.type);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, path = "/login")

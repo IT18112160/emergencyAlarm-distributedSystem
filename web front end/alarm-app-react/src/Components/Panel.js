@@ -25,7 +25,7 @@ setInterval(()=> {
         this.setState({sensors: data})
     })
 
-},1000);
+},2000);
 
 }
 

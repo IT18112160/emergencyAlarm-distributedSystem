@@ -33,18 +33,25 @@ public class SensorService {
 		return repo.findAll();
 	}
 	
-	public void updateSensorCO2(String id,int CO2) {
+	public void updateSensorCO2(String SensorName,int CO2) {
+		
+		
 		
 		try {
 			
-			Sensor sensor= repo.findByid(id);
+			List<Sensor> list= repo.findAll();
 			
-		      sensor.setCO2(CO2);
-		      
-		      repo.save(sensor);
+			for(Sensor sensor:list) {
+				
+				if(sensor.getSensorName().equals(SensorName)) {
+					
+					sensor.setCO2(CO2);
+					
+					repo.save(sensor);
+					System.out.println("Fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuucccccccccccckkkkkkk");
 			
-			
-			
+				}
+		}
 		}catch(Exception e)
 		{
 			
@@ -53,15 +60,23 @@ public class SensorService {
 	}
 	
 	
-	public void updateSmoke(String id,int smoke) {
+	public void updateSmoke(String SensorName,int smoke) {
 		
 		try {
 			
-			Sensor sensor= repo.findByid(id);
+     
+			List<Sensor> list= repo.findAll();
 			
-		      sensor.setSmoke(smoke);
-		      
-		      repo.save(sensor);
+			for(Sensor sensor:list) {
+				
+				if(sensor.getSensorName().equals(SensorName)) {
+					
+					sensor.setSmoke(smoke);
+					
+					repo.save(sensor);
+					
+				}
+			}
 			
 			
 			

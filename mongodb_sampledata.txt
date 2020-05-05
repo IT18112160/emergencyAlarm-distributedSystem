@@ -1,0 +1,25 @@
+//POSTMAN RequestBody, method: POST
+
+// add new admin user
+url: http://localhost:8080/regiser
+	{
+	"username": "Eshan",
+	"password": "1111",
+	"type": "admin"
+	}
+
+//add new normal user
+url: http://localhost:8080/regiser
+	{
+	"username": "Lakshan",
+	"password": "8888",
+	"type": "user"
+	}
+
+//add new sensor device
+url: http://localhost:8080/registersensor
+	{
+	"SensorName": "newFire",
+	"floorNo": "2",
+	"roomNo": "7"
+	}

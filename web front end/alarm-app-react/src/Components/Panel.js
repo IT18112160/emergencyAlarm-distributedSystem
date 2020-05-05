@@ -6,12 +6,10 @@ class Panel extends Component {
 
     constructor(props) {
         super(props);
-
         this.state={
             sensors: []
         }
     }
-
 
 componentWillMount() {
 
@@ -25,7 +23,7 @@ setInterval(()=> {
         this.setState({sensors: data})
     })
 
-},2000);
+},5000);
 
 }
 
@@ -33,20 +31,14 @@ setInterval(()=> {
     render() {
         return (
             <div>
-
                 <AppBar position="static">
                     <Toolbar>
-
                         <Typography variant="h6" style={{marginLeft:'40%'}}>
                             Emergency Fire Alarm System
                         </Typography>
-
                         <Button variant={"contained"} color={"secondary"} style={{marginLeft:'35%'}} onClick={()=>this.props.logout()}>log Out</Button>
-
                     </Toolbar>
                 </AppBar>
-
-
                 <div className='container' >
 
                     {
@@ -54,32 +46,18 @@ setInterval(()=> {
 
                         return (<div className="sensor" key={sensor.id}>
 
-                                <h4>SensorName:{sensor.sensorName}  location:{"Floor:"+sensor.floorNo +"  "+ "Room:"+sensor.roomNo}</h4>
-                                <h6>CO2 Volume:{sensor.co2}</h6>
+                                <h4>SensorName:{" "+sensor.sensorName}  location:{"Floor: "+sensor.floorNo +"  "+ "Room: "+sensor.roomNo}</h4>
+                                <h6>CO2 Volume:{" "+sensor.co2}</h6>
                                 <LinearProgress variant="buffer" value={sensor.co2*10} valueBuffer={100} color={sensor.co2>5? 'secondary': 'primary'}/>
-
-                                <h6>Smoke volume:{sensor.smoke}</h6>
+                                <h6>Smoke volume:{" "+sensor.smoke}</h6>
                                 <LinearProgress variant="buffer" value={sensor.smoke*10} valueBuffer={100} color={sensor.smoke>5? 'secondary': 'primary'}/>
 
                             </div>)
-
-
-
                     })
-
                     }
-
-
-
                 </div>
-
-
-
-
-
             </div>
         );
     }
 }
-
 export default Panel;

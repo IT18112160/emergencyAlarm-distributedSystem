@@ -33,9 +33,21 @@ public class SensorService {
 		return repo.findAll();
 	}
 	
+	public void updateSensor(String SensorName,String floorNo,String roomNo) {
+		try {
+			List<Sensor> list= repo.findAll();
+			for(Sensor sensor:list) {
+				if(sensor.getSensorName().equals(SensorName)) {
+					sensor.setFloorNo(floorNo);
+					sensor.setRoomNo(roomNo);
+					repo.save(sensor);
+					System.out.println(" Sensor updated.....");
+				}
+		}
+		}catch(Exception e){}
+	}
+	
 	public void updateSensorCO2(String SensorName,int CO2) {
-		
-		
 		
 		try {
 			
@@ -48,7 +60,7 @@ public class SensorService {
 					sensor.setCO2(CO2);
 					
 					repo.save(sensor);
-					System.out.println("Fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuucccccccccccckkkkkkk");
+					System.out.println(" CO2 updated.....");
 			
 				}
 		}

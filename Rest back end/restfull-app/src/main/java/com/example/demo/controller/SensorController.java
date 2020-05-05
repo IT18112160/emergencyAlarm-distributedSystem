@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.Service.SensorService;
 import com.example.demo.data.RegisterSensorRequest;
 import com.example.demo.data.UpdateRequest;
+import com.example.demo.data.UpdateSensorRequest;
 import com.example.demo.data.updateCO2Request;
 import com.example.demo.model.Sensor;
 
@@ -24,7 +25,7 @@ public class SensorController {
 	SensorService service;
 
 	
-	@RequestMapping(path = "/registersensor",method = RequestMethod.POST)
+	@RequestMapping(path = "/registersensor",method = RequestMethod.POST,consumes = "application/json")
 	public String AddSensor(@RequestBody RegisterSensorRequest request) {
 		
 		return service.RegisterSensor(request.SensorName, request.floorNo, request.roomNo);
@@ -37,6 +38,11 @@ public class SensorController {
 		return service.getAllSensors();
 	}
 	
+	@RequestMapping(method = RequestMethod.POST, path="/updatesensor")
+	public void UpdateSensor(@RequestBody UpdateSensorRequest request) {
+		
+	      service.updateSensor(request.SensorName, request.floorNo, request.roomNo);
+	}
 	
 	@RequestMapping(method = RequestMethod.POST, path="/updateco2")
 	public void UpdateCO2(@RequestBody updateCO2Request request) {

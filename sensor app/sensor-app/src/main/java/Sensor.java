@@ -1,5 +1,7 @@
+import java.util.Random;
 import java.util.Scanner;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import io.restassured.RestAssured;
@@ -12,8 +14,9 @@ public class Sensor {
 	
 	public static void main(String[] args)  throws Exception{
 		
-		Scanner scan=new Scanner(System.in);
-		String SensorName=scan.nextLine();
+
+		String[] sensors = {"newSen","newfirealarm","new"};
+		Random random = new Random();
 		
 		int i=0;
 		while(true) {
@@ -29,7 +32,7 @@ public class Sensor {
 		 RequestSpecification request= RestAssured.given();
 		 JSONObject reqparam= new JSONObject();
 		 
-		 reqparam.put("SensorName",SensorName);
+		 reqparam.put("SensorName",sensors[random.nextInt(3)]);
 		 reqparam.put("smoke", i);
 		 
 		 request.header("Content-Type", "application/json");
@@ -38,18 +41,13 @@ public class Sensor {
 		 
 		 Response response= request.post("/updatesmoke");
 		 
-		 
-		
-		 
-		 
-		 
-		 
+		 System.out.println(response.statusCode());
 		 
 		 RestAssured.baseURI="http://localhost:8080";
 		 RequestSpecification request2= RestAssured.given();
 		 JSONObject reqparam2= new JSONObject();
 		 
-		 reqparam2.put("SensorName",SensorName);
+		 reqparam2.put("SensorName",sensors[random.nextInt(3)]);
 		 
 		 if(i<5) {
 		 
@@ -68,7 +66,7 @@ public class Sensor {
 		 System.out.println(response2.statusCode());
 		 
 			
-			Thread.sleep(5000);
+			Thread.sleep(25000);
 			
 			i=i+1;
 			

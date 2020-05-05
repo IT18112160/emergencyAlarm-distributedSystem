@@ -30,7 +30,6 @@ public class UserService {
 			User user = repo.findByUsername(username);
 			
 			if(user!=null) {
-				
 				if(user.getPassword().equals(password)) {
 					return user;
 				}else { return null;}

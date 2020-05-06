@@ -67,7 +67,7 @@ public class LoginRegisterClient extends JFrame {
                 ClientApp.refreshTable();
             }
         };
-        timer.schedule(task, 40000,40000);
+        timer.schedule(task, 15000,15000);
         
 	}
 

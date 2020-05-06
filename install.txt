@@ -1,20 +1,28 @@
 #clone git repository to any directory
 
+#Run Mongodb server (run mongodb before running the spring application)
+
 #Add rest backend
-Find the restfull-app directory, inside in Rest back end directory and add it to Spring Tool Suite (STS).
+Find the restfull-app directory inside the Rest back end directory and import it to Spring Tool Suite (can be imported using STS or intellij).
 Bulid the project and Run as Spring Boot App. (MongoDB required)
 
 #Add web client application
-Open WebStrom and, add "web front end/alarm-app-react" project.
+Open WebStrom and, import "web front end/alarm-app-react" project.
 Open terminal and type "yarn install"
 type "yarn start" to run web client application"
 
 #Add desktop application and rmi server
-Open eclipse IDE and add "rmiServer_clientApp" project.
+Open eclipse IDE and import "rmiServer_clientApp" project.
 It contains two packages called "clientApp" and "rmi_server".
 Expand rmi_server package and run "AlarmServer.java" class as java application. 
 Expand clientApp package and run "LoginRegisterClient.java" class as java application.
 Type username and password to login to system.
+
+
+#Run Sensor app
+Open eclipse IDE and import "sensor app" project inside the sensor app directory.
+Build the project and run as java application.
+
 
 
 

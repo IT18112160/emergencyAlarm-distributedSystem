@@ -66,7 +66,7 @@ public class Sensor {
 		 System.out.println(response2.statusCode());
 		 
 			
-			Thread.sleep(25000);
+			Thread.sleep(10000);
 			
 			i=i+1;
 			

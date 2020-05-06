@@ -11,7 +11,21 @@ class Panel extends Component {
         }
     }
 
-componentWillMount() {
+
+    componentWillMount() {
+
+        fetch('http://localhost:8080/getallsensors', {mode: "cors"}).then(res => {
+            return res.json()
+        }).then(data => {
+            console.log(data)
+            this.setState({sensors: data})
+        })
+
+
+    }
+
+
+    componentDidMount() {
 
 
 setInterval(()=> {
@@ -23,8 +37,7 @@ setInterval(()=> {
         this.setState({sensors: data})
     })
 
-},5000);
-
+},40000);
 }
 
 

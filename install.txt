@@ -6,6 +6,8 @@
 Find the restfull-app directory inside the Rest back end directory and import it to Spring Tool Suite (can be imported using STS or intellij).
 Bulid the project and Run as Spring Boot App. (MongoDB required)
 
+#Create a intital user using POSTMAN by reffering "mongodb_sampledata.txt"  file
+
 #Add web client application
 Open WebStrom and, import "web front end/alarm-app-react" project.
 Open terminal and type "yarn install"
